@@ -9,7 +9,6 @@ const SELECT_FIELDS = [
   "slug",
   "location",
   "date",
-  "thumbnail",
   "presentedTitle",
   "presentedSubtitle",
   "speech",
@@ -32,15 +31,15 @@ export default factories.createCoreController(
             where: {
               id: item.id,
             },
-            populate: ["user"],
+            populate: ["createdBy", "thumbnail", "images"],
             select: SELECT_FIELDS,
           });
 
           data[index] = {
             ...foundItem,
-            user: {
-              name: `${foundItem.user.firstname} ${foundItem.user.lastname}`,
-              username: foundItem.user.username,
+            createdBy: {
+              name: `${foundItem.createdBy.firstname} ${foundItem.createdBy.lastname}`,
+              username: foundItem.createdBy.username,
             },
           };
         })
@@ -55,13 +54,13 @@ export default factories.createCoreController(
         where: {
           slug: ctx.params.id,
         },
-        populate: ["user"],
+        populate: ["createdBy"],
         select: SELECT_FIELDS,
       });
 
       data.user = {
-        name: `${data.user.firstname} ${data.user.lastname}`,
-        username: data.user.username,
+        name: `${data.createdBy.firstname} ${data.createdBy.lastname}`,
+        username: data.createdBy.username,
       };
 
       return { data };

@@ -32,9 +32,6 @@
     "date": {
       "type": "datetime"
     },
-    "thumbnail": {
-      "type": "string"
-    },
     "presentedTitle": {
       "type": "string"
     },
@@ -50,15 +47,21 @@
     "text": {
       "type": "text"
     },
-    "user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "admin::user"
-    },
     "images": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::image.image"
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
