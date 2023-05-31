@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "isUpcoming": {
+      "type": "boolean"
+    },
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "location": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "thumbnail": {
+      "type": "string"
+    },
+    "presentedTitle": {
+      "type": "string"
+    },
+    "presentedSubtitle": {
+      "type": "string"
+    },
+    "speech": {
+      "type": "string"
+    },
+    "learned": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "images": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::image.image"
+    }
+  }
+}
