@@ -34,7 +34,7 @@ export default factories.createCoreController(
           data[index] = {
             ...foundItem,
             user: {
-              name: foundItem.user.fullName,
+              name: `${foundItem.user.firstname} ${foundItem.user.lastname}`,
               username: foundItem.user.username,
             },
           };
@@ -48,15 +48,15 @@ export default factories.createCoreController(
 
       const data = await query.findOne({
         where: {
-          id: ctx.params.id,
+          slug: ctx.params.id,
         },
         populate: ["user"],
         select: SELECT_FIELDS,
       });
 
       data.user = {
-        id: data.user.id,
-        name: data.user.fullName,
+        name: `${data.user.firstname} ${data.user.lastname}`,
+        username: data.user.username,
       };
 
       return { data };

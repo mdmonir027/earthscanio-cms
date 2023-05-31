@@ -42,10 +42,10 @@
       "type": "string"
     },
     "speech": {
-      "type": "string"
+      "type": "text"
     },
     "learned": {
-      "type": "string"
+      "type": "text"
     },
     "text": {
       "type": "text"
