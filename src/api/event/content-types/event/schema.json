@@ -13,14 +13,18 @@
   "pluginOptions": {},
   "attributes": {
     "isUpcoming": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "required": true
     },
     "location": {
       "type": "string"

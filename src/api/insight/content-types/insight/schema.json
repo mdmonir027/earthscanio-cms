@@ -13,11 +13,14 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "required": true
     },
     "user": {
       "type": "relation",
@@ -31,7 +34,8 @@
       "type": "string"
     },
     "type": {
-      "type": "string"
+      "type": "string",
+      "default": "blog"
     },
     "content": {
       "type": "richtext"

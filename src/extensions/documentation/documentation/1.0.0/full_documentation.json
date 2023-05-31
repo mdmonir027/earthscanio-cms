@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-05-31T05:09:30.929Z"
+    "x-generation-date": "2023-05-31T05:14:43.505Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -86,6 +86,10 @@
         ],
         "properties": {
           "data": {
+            "required": [
+              "title",
+              "slug"
+            ],
             "type": "object",
             "properties": {
               "isUpcoming": {
@@ -199,6 +203,10 @@
       },
       "Event": {
         "type": "object",
+        "required": [
+          "title",
+          "slug"
+        ],
         "properties": {
           "isUpcoming": {
             "type": "boolean"
@@ -1044,6 +1052,10 @@
         ],
         "properties": {
           "data": {
+            "required": [
+              "title",
+              "slug"
+            ],
             "type": "object",
             "properties": {
               "title": {
@@ -1127,6 +1139,10 @@
       },
       "Insight": {
         "type": "object",
+        "required": [
+          "title",
+          "slug"
+        ],
         "properties": {
           "title": {
             "type": "string"
