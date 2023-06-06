@@ -29,23 +29,11 @@
     "location": {
       "type": "string"
     },
-    "date": {
-      "type": "datetime"
-    },
     "presentedTitle": {
       "type": "string"
     },
     "presentedSubtitle": {
       "type": "string"
-    },
-    "speech": {
-      "type": "text"
-    },
-    "learned": {
-      "type": "text"
-    },
-    "text": {
-      "type": "text"
     },
     "images": {
       "type": "media",
@@ -62,6 +50,22 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "date": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "speech": {
+      "type": "richtext"
+    },
+    "learned": {
+      "type": "richtext"
+    },
+    "text": {
+      "type": "richtext"
     }
   }
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-06-01T16:38:07.457Z"
+    "x-generation-date": "2023-06-05T16:05:54.053Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -472,7 +472,8 @@
             "required": [
               "title",
               "slug",
-              "images"
+              "images",
+              "date"
             ],
             "type": "object",
             "properties": {
@@ -488,23 +489,10 @@
               "location": {
                 "type": "string"
               },
-              "date": {
-                "type": "string",
-                "format": "date-time"
-              },
               "presentedTitle": {
                 "type": "string"
               },
               "presentedSubtitle": {
-                "type": "string"
-              },
-              "speech": {
-                "type": "string"
-              },
-              "learned": {
-                "type": "string"
-              },
-              "text": {
                 "type": "string"
               },
               "images": {
@@ -531,6 +519,21 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "date": {
+                "type": "string"
+              },
+              "subtitle": {
+                "type": "string"
+              },
+              "speech": {
+                "type": "string"
+              },
+              "learned": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
               }
             }
           }
@@ -587,7 +590,8 @@
         "required": [
           "title",
           "slug",
-          "images"
+          "images",
+          "date"
         ],
         "properties": {
           "isUpcoming": {
@@ -602,23 +606,10 @@
           "location": {
             "type": "string"
           },
-          "date": {
-            "type": "string",
-            "format": "date-time"
-          },
           "presentedTitle": {
             "type": "string"
           },
           "presentedSubtitle": {
-            "type": "string"
-          },
-          "speech": {
-            "type": "string"
-          },
-          "learned": {
-            "type": "string"
-          },
-          "text": {
             "type": "string"
           },
           "images": {
@@ -1384,6 +1375,21 @@
               }
             }
           },
+          "date": {
+            "type": "string"
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "speech": {
+            "type": "string"
+          },
+          "learned": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -1463,7 +1469,8 @@
           "data": {
             "required": [
               "title",
-              "slug"
+              "slug",
+              "subtext"
             ],
             "type": "object",
             "properties": {
@@ -1495,6 +1502,9 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "subtext": {
+                "type": "string"
               }
             }
           }
@@ -1550,7 +1560,8 @@
         "type": "object",
         "required": [
           "title",
-          "slug"
+          "slug",
+          "subtext"
         ],
         "properties": {
           "title": {
@@ -2191,6 +2202,9 @@
                 }
               }
             }
+          },
+          "subtext": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",

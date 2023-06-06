@@ -16,13 +16,21 @@ export default factories.createCoreController(
           data: { firstname, lastname, email, phone, message },
         });
 
-      await strapi.plugin("email").service("email").send({
-        to: "", // todo need to update email here
-        from: email,
-        subject: "Product",
-        text: "Request",
-        html: `<h4>Hello world</h4>`,
-      });
+      await strapi
+        .plugin("email")
+        .service("email")
+        .send({
+          to: "mmislam027@gmail.com", // todo need to update email here
+          from: email,
+          subject: "Product",
+          text: "Request",
+          html: `<div>
+                <p>Name: ${firstname} ${lastname}</p>
+                <p>Email: ${email}</p>
+                <p>Phone: ${phone}</p>
+                <p>Text: ${message}</p>
+          </div>`,
+        });
       return { data };
     },
   })

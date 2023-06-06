@@ -1,7 +1,7 @@
 /**
  * insight controller
  */
-
+const { sanitize } = require("@strapi/utils");
 const SELECT_FIELDS = [
   "title",
   "slug",
@@ -10,6 +10,7 @@ const SELECT_FIELDS = [
   "sourceUrl",
   "type",
   "publishedAt",
+  "subtext",
 ];
 
 import { factories } from "@strapi/strapi";
@@ -33,7 +34,6 @@ export default factories.createCoreController(
 
           data[index] = {
             ...foundItem,
-
             createdBy: {
               name: `${foundItem.createdBy.firstname} ${foundItem.createdBy.lastname}`,
               username: foundItem.createdBy.username,
@@ -55,12 +55,17 @@ export default factories.createCoreController(
         select: SELECT_FIELDS,
       });
 
-      data.user = {
+      data.content = data.content
+        .replaceAll("../", ``)
+        .replaceAll('src="', `src="${strapi.config.get("server.url")}/`); // Here we modify the 'Content' and add your website "url" to it
+
+      data.createdBy = {
         name: `${data.createdBy.firstname} ${data.createdBy.lastname}`,
         username: data.createdBy.username,
       };
+      const sanitizedEntity = await sanitize.contentAPI.output(data);
 
-      return { data };
+      return { data: sanitizedEntity };
     },
   })
 );

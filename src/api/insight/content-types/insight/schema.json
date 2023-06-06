@@ -8,8 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true,
-    "populateCreatorFields": true
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -43,6 +42,10 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "subtext": {
+      "type": "string",
+      "required": true
     }
   }
 }

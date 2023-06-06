@@ -17,6 +17,7 @@ const SELECT_FIELDS = [
   "createdAt",
   "updatedAt",
   "publishedAt",
+  "subtitle",
 ];
 export default factories.createCoreController(
   "api::event.event",
@@ -54,7 +55,7 @@ export default factories.createCoreController(
         where: {
           slug: ctx.params.id,
         },
-        populate: ["createdBy"],
+        populate: ["createdBy", "thumbnail", "images"],
         select: SELECT_FIELDS,
       });
 
