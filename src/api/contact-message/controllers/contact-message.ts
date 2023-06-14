@@ -20,7 +20,7 @@ export default factories.createCoreController(
         .plugin("email")
         .service("email")
         .send({
-          to: "mmislam027@gmail.com", // todo need to update email here
+          to: "info@earthscan.io", // todo need to update email here
           from: email,
           subject: "Product",
           text: "Request",
